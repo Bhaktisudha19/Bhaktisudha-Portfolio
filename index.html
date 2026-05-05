@@ -1,122 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bhakti Sudha | UX Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhakti Sudha | UX Portfolio</title>
 
-  <!-- React -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  scroll-behavior: smooth;
+}
 
-  <!-- Framer Motion -->
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 20px;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+h1 { font-size: 64px; margin: 0; }
+h2 { font-size: 36px; margin-bottom: 20px; }
+h3 { font-size: 22px; margin-top: 40px; }
+p { color: #94a3b8; }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 24px 40px;
-    }
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
 
-    .nav a {
-      margin-left: 24px;
-      color: #94a3b8;
-      text-decoration: none;
-    }
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
-    .section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 20px;
-    }
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.4s;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 24px;
-      margin-top: 20px;
-      border-radius: 16px;
-      transition: 0.3s;
-    }
-  </style>
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul {
+  color: #94a3b8;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #222;
+  color: #666;
+}
+
+@media(max-width: 768px){
+  h1 { font-size: 36px; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
-<div id="root"></div>
+
+<!-- NAV -->
+<div class="nav">
+  <div>Bhakti Sudha</div>
+  <div>Work • CLIP • About • AI</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <p>Portfolio of</p>
+  <h1>Bhakti Sudha</h1>
+  <p>
+    Designing scalable UX systems across travel, enterprise, and AI platforms.
+  </p>
+</section>
+
+<!-- WORK -->
+<section class="fade">
+  <h2>Selected Work</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/clip-hero.png" />
+      <div class="card-content">
+        <h3>Clinical Intelligence Platform</h3>
+        <p>AI-driven enterprise UX system</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/search-ui.png" />
+      <div class="card-content">
+        <h3>Search Experience</h3>
+        <p>Improving travel booking conversion</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIP CASE STUDY -->
+<section class="fade">
+  <h2>Clinical Intelligence Platform (CLIP)</h2>
+
+  <p><strong>Role:</strong> Senior UX Designer</p>
+  <p><strong>Domain:</strong> Healthcare AI</p>
+
+  <h3>Problem</h3>
+  <p>
+    Clinical decision-making relies on fragmented and complex datasets,
+    making interpretation slow and cognitively demanding.
+  </p>
+
+  <ul>
+    <li>Cognitive overload due to dense data</li>
+    <li>Disconnected workflows</li>
+    <li>High dependency on technical expertise</li>
+  </ul>
+
+  <h3>Goal</h3>
+  <p>
+    Simplify clinical data into actionable insights using AI-driven workflows.
+  </p>
+
+  <h3>Approach</h3>
+  <p>
+    Collaborated with clinicians and data teams to map workflows and identify
+    friction points across decision-making journeys.
+  </p>
+
+  <h3>Solution</h3>
+  <p>
+    Designed an AI-powered platform that transforms raw data into intuitive,
+    structured insights.
+  </p>
+
+  <img src="images/clip-ui-1.png" />
+  <img src="images/clip-ui-2.png" />
+
+  <h3>Impact</h3>
+  <ul>
+    <li>Reduced decision-making time</li>
+    <li>Improved usability across teams</li>
+    <li>Enabled scalable AI workflows</li>
+  </ul>
+
+  <h3>Key Design Decisions</h3>
+  <ul>
+    <li>Shift from raw data → insights</li>
+    <li>Progressive disclosure for complexity</li>
+    <li>AI as assistant, not replacement</li>
+  </ul>
+
+  <h3>Learnings</h3>
+  <ul>
+    <li>Simplification drives adoption</li>
+    <li>AI UX must build trust</li>
+    <li>Complex systems need strong structure</li>
+  </ul>
+
+</section>
+
+<!-- AI -->
+<section class="fade">
+  <h2>AI in My Workflow</h2>
+  <p>
+    I leverage AI tools like ChatGPT, Figma AI, and automation workflows
+    to accelerate research synthesis, ideation, and design iteration.
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section class="fade">
+  <h2>About</h2>
+  <p>
+    UX Designer at Expedia Group with 10+ years of experience designing
+    scalable systems across travel, enterprise, and AI platforms.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section class="fade">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<div class="footer">
+  © 2026 Bhakti Sudha
+</div>
 
 <script>
-const { motion } = window['framer-motion'];
+const fades = document.querySelectorAll(".fade");
 
-function App() {
-  return React.createElement("div", null,
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+});
 
-    // NAV
-    React.createElement("div", { className: "nav" },
-      React.createElement("h2", null, "Bhakti Sudha"),
-      React.createElement("div", null,
-        React.createElement("a", { href: "#work" }, "Work"),
-        React.createElement("a", { href: "#about" }, "About"),
-        React.createElement("a", { href: "#ai" }, "AI")
-      )
-    ),
-
-    // HERO
-    React.createElement("div", { className: "hero" },
-      React.createElement(motion.h1, {
-        initial: { opacity: 0, y: 40 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.8 }
-      }, "Designing Scalable UX for Travel & AI"),
-
-      React.createElement("p", null, "UX Designer @ Expedia Group")
-    ),
-
-    // WORK
-    React.createElement("div", { id: "work", className: "section" },
-      React.createElement("h2", null, "Selected Work"),
-
-      ["Search Experience", "Simulation Manager", "CLIP Platform"].map((item, i) =>
-        React.createElement(motion.div, {
-          key: i,
-          whileHover: { scale: 1.05 },
-          className: "card"
-        }, item)
-      )
-    ),
-
-    // AI
-    React.createElement("div", { id: "ai", className: "section" },
-      React.createElement("h2", null, "AI Workflow"),
-      React.createElement("p", null,
-        "Using ChatGPT, Figma AI, and automation to accelerate design workflows."
-      )
-    ),
-
-    // ABOUT
-    React.createElement("div", { id: "about", className: "section" },
-      React.createElement("h2", null, "About"),
-      React.createElement("p", null,
-        "UX Designer with 10+ years of experience in enterprise systems and travel products."
-      )
-    )
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  React.createElement(App)
-);
+fades.forEach(el => observer.observe(el));
 </script>
 
 </body>
