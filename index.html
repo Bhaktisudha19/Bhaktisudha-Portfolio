@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhakti Sudha | UX Portfolio</title>
+
+  <!-- React -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Framer Motion -->
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 40px;
+    }
+
+    .nav a {
+      margin-left: 24px;
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 24px;
+      margin-top: 20px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script>
+const { motion } = window['framer-motion'];
+
+function App() {
+  return React.createElement("div", null,
+
+    // NAV
+    React.createElement("div", { className: "nav" },
+      React.createElement("h2", null, "Bhakti Sudha"),
+      React.createElement("div", null,
+        React.createElement("a", { href: "#work" }, "Work"),
+        React.createElement("a", { href: "#about" }, "About"),
+        React.createElement("a", { href: "#ai" }, "AI")
+      )
+    ),
+
+    // HERO
+    React.createElement("div", { className: "hero" },
+      React.createElement(motion.h1, {
+        initial: { opacity: 0, y: 40 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8 }
+      }, "Designing Scalable UX for Travel & AI"),
+
+      React.createElement("p", null, "UX Designer @ Expedia Group")
+    ),
+
+    // WORK
+    React.createElement("div", { id: "work", className: "section" },
+      React.createElement("h2", null, "Selected Work"),
+
+      ["Search Experience", "Simulation Manager", "CLIP Platform"].map((item, i) =>
+        React.createElement(motion.div, {
+          key: i,
+          whileHover: { scale: 1.05 },
+          className: "card"
+        }, item)
+      )
+    ),
+
+    // AI
+    React.createElement("div", { id: "ai", className: "section" },
+      React.createElement("h2", null, "AI Workflow"),
+      React.createElement("p", null,
+        "Using ChatGPT, Figma AI, and automation to accelerate design workflows."
+      )
+    ),
+
+    // ABOUT
+    React.createElement("div", { id: "about", className: "section" },
+      React.createElement("h2", null, "About"),
+      React.createElement("p", null,
+        "UX Designer with 10+ years of experience in enterprise systems and travel products."
+      )
+    )
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  React.createElement(App)
+);
+</script>
+
+</body>
+</html>
