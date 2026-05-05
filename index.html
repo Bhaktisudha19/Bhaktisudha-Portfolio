@@ -11,7 +11,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
-  scroll-behavior: smooth;
 }
 
 section {
@@ -20,20 +19,22 @@ section {
   padding: 100px 20px;
 }
 
-h1 { font-size: 64px; margin: 0; }
-h2 { font-size: 36px; margin-bottom: 20px; }
+h1 { font-size: 60px; }
+h2 { font-size: 34px; }
 h3 { font-size: 22px; margin-top: 40px; }
-p { color: #94a3b8; }
+
+p, li {
+  color: #94a3b8;
+  line-height: 1.6;
+}
 
 .nav {
   position: fixed;
   width: 100%;
-  top: 0;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(10px);
-  z-index: 10;
 }
 
 .hero {
@@ -85,160 +86,224 @@ img {
   transform: translateY(0);
 }
 
-ul {
-  color: #94a3b8;
-}
-
 .footer {
   text-align: center;
   padding: 40px;
-  border-top: 1px solid #222;
   color: #666;
-}
-
-@media(max-width: 768px){
-  h1 { font-size: 36px; }
-  .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
   <div>Bhakti Sudha</div>
-  <div>Work • CLIP • About • AI</div>
+  <div>Work • Case Studies • About</div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <p>Portfolio of</p>
   <h1>Bhakti Sudha</h1>
-  <p>
-    Designing scalable UX systems across travel, enterprise, and AI platforms.
-  </p>
+  <p>Senior UX Designer crafting scalable systems across Travel, AI & Enterprise.</p>
 </section>
 
 <!-- WORK -->
 <section class="fade">
   <h2>Selected Work</h2>
-
   <div class="grid">
 
     <div class="card">
-      <img src="images/clip-hero.png" />
+      <img src="images/clip-hero.png">
       <div class="card-content">
-        <h3>Clinical Intelligence Platform</h3>
-        <p>AI-driven enterprise UX system</p>
+        <h3>CLIP</h3>
+        <p>AI-powered clinical intelligence platform</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="images/search-ui.png" />
+      <img src="images/search-ui.png">
       <div class="card-content">
-        <h3>Search Experience</h3>
-        <p>Improving travel booking conversion</p>
+        <h3>Search UX</h3>
+        <p>High-impact booking experience</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- CLIP CASE STUDY -->
+<!-- ================= CLIP ================= -->
 <section class="fade">
-  <h2>Clinical Intelligence Platform (CLIP)</h2>
+<h2>Clinical Intelligence Platform (CLIP)</h2>
 
-  <p><strong>Role:</strong> Senior UX Designer</p>
-  <p><strong>Domain:</strong> Healthcare AI</p>
+<h3>Problem</h3>
+<p>
+Clinical workflows relied on fragmented datasets, making decision-making slow,
+error-prone, and cognitively heavy.
+</p>
 
-  <h3>Problem</h3>
-  <p>
-    Clinical decision-making relies on fragmented and complex datasets,
-    making interpretation slow and cognitively demanding.
-  </p>
+<ul>
+<li>Disconnected data sources</li>
+<li>High cognitive load</li>
+<li>Dependency on technical users</li>
+</ul>
 
-  <ul>
-    <li>Cognitive overload due to dense data</li>
-    <li>Disconnected workflows</li>
-    <li>High dependency on technical expertise</li>
-  </ul>
+<h3>Goal</h3>
+<p>Enable faster, insight-driven clinical decisions using AI.</p>
 
-  <h3>Goal</h3>
-  <p>
-    Simplify clinical data into actionable insights using AI-driven workflows.
-  </p>
+<h3>Approach</h3>
+<p>
+Mapped workflows with clinicians and identified breakdowns in data interpretation.
+Focused on simplifying complexity.
+</p>
 
-  <h3>Approach</h3>
-  <p>
-    Collaborated with clinicians and data teams to map workflows and identify
-    friction points across decision-making journeys.
-  </p>
+<h3>Solution</h3>
+<p>
+Designed an AI-powered platform transforming raw clinical data into actionable insights.
+</p>
 
-  <h3>Solution</h3>
-  <p>
-    Designed an AI-powered platform that transforms raw data into intuitive,
-    structured insights.
-  </p>
+<img src="images/clip-ui-1.png">
+<img src="images/clip-ui-2.png">
 
-  <img src="images/clip-ui-1.png" />
-  <img src="images/clip-ui-2.png" />
+<h3>Impact</h3>
+<ul>
+<li>Reduced decision-making time</li>
+<li>Improved usability across teams</li>
+<li>Enabled scalable AI workflows</li>
+</ul>
 
-  <h3>Impact</h3>
-  <ul>
-    <li>Reduced decision-making time</li>
-    <li>Improved usability across teams</li>
-    <li>Enabled scalable AI workflows</li>
-  </ul>
+<h3>Key Decisions</h3>
+<ul>
+<li>Insight-first design</li>
+<li>Progressive disclosure</li>
+<li>AI as assistive layer</li>
+</ul>
 
-  <h3>Key Design Decisions</h3>
-  <ul>
-    <li>Shift from raw data → insights</li>
-    <li>Progressive disclosure for complexity</li>
-    <li>AI as assistant, not replacement</li>
-  </ul>
-
-  <h3>Learnings</h3>
-  <ul>
-    <li>Simplification drives adoption</li>
-    <li>AI UX must build trust</li>
-    <li>Complex systems need strong structure</li>
-  </ul>
-
+<h3>Learnings</h3>
+<ul>
+<li>Simplification drives adoption</li>
+<li>Trust is critical in AI UX</li>
+</ul>
 </section>
 
-<!-- AI -->
+<!-- ================= SEARCH ================= -->
 <section class="fade">
-  <h2>AI in My Workflow</h2>
-  <p>
-    I leverage AI tools like ChatGPT, Figma AI, and automation workflows
-    to accelerate research synthesis, ideation, and design iteration.
-  </p>
+<h2>Search Experience (Expedia Group)</h2>
+
+<h3>Problem</h3>
+<p>
+Search is the highest-impact entry point but suffered from complexity and drop-offs.
+</p>
+
+<ul>
+<li>High friction in input fields</li>
+<li>Poor clarity in guest vs room selection</li>
+<li>Low conversion rates</li>
+</ul>
+
+<h3>Goal</h3>
+<p>Improve search usability and increase booking conversion.</p>
+
+<h3>Approach</h3>
+<p>
+Conducted usability testing and analyzed behavioral data to identify friction patterns.
+</p>
+
+<h3>Solution</h3>
+<p>
+Redesigned search form with simplified inputs, better defaults, and clearer hierarchy.
+</p>
+
+<img src="images/search-ui.png">
+
+<h3>Impact</h3>
+<ul>
+<li>Improved form completion rate</li>
+<li>Reduced user confusion</li>
+<li>Enhanced cross-platform consistency</li>
+</ul>
+
+<h3>Key Decisions</h3>
+<ul>
+<li>Room-first vs guest-first logic</li>
+<li>Smart defaults</li>
+<li>Reduced cognitive load</li>
+</ul>
+
+<h3>Learnings</h3>
+<ul>
+<li>Small UX changes can drive big revenue impact</li>
+<li>Clarity beats flexibility</li>
+</ul>
+</section>
+
+<!-- ================= SIMULATION ================= -->
+<section class="fade">
+<h2>Simulation Input Manager</h2>
+
+<h3>Problem</h3>
+<p>
+Enterprise users struggled with complex simulation configurations and inputs.
+</p>
+
+<ul>
+<li>Overwhelming forms</li>
+<li>Lack of guidance</li>
+<li>High error rates</li>
+</ul>
+
+<h3>Goal</h3>
+<p>Simplify complex enterprise workflows.</p>
+
+<h3>Approach</h3>
+<p>
+Studied expert workflows and identified patterns for structuring inputs logically.
+</p>
+
+<h3>Solution</h3>
+<p>
+Designed modular input system with guided flows and validation.
+</p>
+
+<img src="images/simulation-ui.png">
+
+<h3>Impact</h3>
+<ul>
+<li>Reduced user errors</li>
+<li>Faster task completion</li>
+<li>Improved adoption</li>
+</ul>
+
+<h3>Key Decisions</h3>
+<ul>
+<li>Step-by-step flows</li>
+<li>Context-aware inputs</li>
+<li>Error prevention</li>
+</ul>
+
+<h3>Learnings</h3>
+<ul>
+<li>Enterprise UX needs structure over flexibility</li>
+<li>Guidance reduces cognitive load</li>
+</ul>
 </section>
 
 <!-- ABOUT -->
 <section class="fade">
-  <h2>About</h2>
-  <p>
-    UX Designer at Expedia Group with 10+ years of experience designing
-    scalable systems across travel, enterprise, and AI platforms.
-  </p>
+<h2>About</h2>
+<p>
+Senior UX Designer at Expedia Group with 10+ years experience designing
+scalable systems across travel, enterprise, and AI.
+</p>
 </section>
 
-<!-- CONTACT -->
-<section class="fade">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>LinkedIn: linkedin.com/in/yourprofile</p>
-</section>
-
+<!-- FOOTER -->
 <div class="footer">
-  © 2026 Bhakti Sudha
+© 2026 Bhakti Sudha
 </div>
 
 <script>
 const fades = document.querySelectorAll(".fade");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -246,7 +311,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-
 fades.forEach(el => observer.observe(el));
 </script>
 
