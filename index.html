@@ -11,117 +11,110 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: #020617;
   color: white;
-  overflow-x: hidden;
 }
 
 /* HERO */
-.hero {
+.hero-banner {
+  position: relative;
   height: 100vh;
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px;
+  align-items: center;
+  padding: 0 80px;
 }
 
-.hero h1 {
-  font-size: 72px;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(15,23,42,0.4), rgba(2,6,23,0.95));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #7c8aa5;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 64px;
   line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+  animation: fadeUp 1s ease forwards;
 }
 
-.hero p {
+.hero-title span {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  margin-top: 24px;
+  font-size: 18px;
   color: #94a3b8;
   max-width: 600px;
 }
 
-/* STORY SECTION */
-.story {
-  height: 200vh;
-  position: relative;
+.scroll-indicator {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #64748b;
 }
 
-.sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px;
+/* SECTION */
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 100px 20px;
 }
 
-/* TEXT BLOCK */
-.story-text {
-  max-width: 500px;
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.story-text h2 {
-  font-size: 42px;
-}
-
-.story-text p {
+p {
   color: #94a3b8;
 }
 
-/* IMAGE */
-.story-img {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%) scale(0.9);
-  width: 500px;
-  transition: 0.6s ease;
-  opacity: 0.6;
-}
-
-.story.active .story-img {
-  transform: translateY(-50%) scale(1);
-  opacity: 1;
-}
-
-/* FULL VISUAL SECTION */
-.full-image {
-  height: 100vh;
-  position: relative;
-}
-
-.full-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 80px;
-  left: 80px;
-  max-width: 500px;
-}
-
-.overlay h2 {
-  font-size: 48px;
-}
-
-/* GRID */
+/* WORK GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  padding: 100px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.4s;
 }
 
 .card img {
   width: 100%;
-  border-radius: 12px;
-  transition: 0.4s;
 }
 
-.card:hover img {
-  transform: scale(1.05);
+.card:hover {
+  transform: translateY(-8px);
 }
 
-/* FADE */
+.card-content {
+  padding: 20px;
+}
+
+/* ANIMATION */
 .fade {
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(40px);
   transition: 1s;
 }
 
@@ -129,98 +122,86 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-banner {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Designing systems, not just screens.</h1>
-  <p>
-    Senior UX Designer crafting scalable experiences across AI, enterprise,
-    and travel platforms.
-  </p>
-</section>
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
 
-<!-- WORK GRID -->
-<section class="grid fade">
-  <div class="card">
-    <img src="images/clip-hero.png">
-    <h3>Clinical Intelligence Platform</h3>
-  </div>
+  <div class="hero-content">
+    
+    <p class="tag">UX DESIGNER</p>
 
-  <div class="card">
-    <img src="images/search-ui.png">
-    <h3>Search Experience</h3>
-  </div>
-</section>
+    <h1 class="hero-title">
+      Designing scalable,<br>
+      <span>data-driven & AI-powered</span><br>
+      user experiences.
+    </h1>
 
-<!-- CLIP STORY -->
-<section class="story">
-  <div class="sticky">
-    <div class="story-text">
-      <h2>Complex data slows decisions.</h2>
-      <p>
-        Clinicians struggled with fragmented systems and overwhelming datasets.
-      </p>
+    <p class="hero-subtitle">
+      Across healthcare, B2B, travel, and ecommerce—designing intelligent,
+      scalable products from vision to real-world impact.
+    </p>
+
+    <div class="scroll-indicator">
+      ↓ Scroll to explore
     </div>
-    <img class="story-img" src="images/clip-ui-1.png">
+
   </div>
 </section>
 
-<section class="story">
-  <div class="sticky">
-    <div class="story-text">
-      <h2>We simplified complexity.</h2>
-      <p>
-        Designed an AI-driven system that surfaces insights instead of raw data.
-      </p>
+<!-- WORK -->
+<section class="section fade">
+  <h2>Selected Work</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="images/clip-ui-1.png">
+      <div class="card-content">
+        <h3>Clinical Intelligence Platform</h3>
+        <p>AI-driven enterprise UX system</p>
+      </div>
     </div>
-    <img class="story-img" src="images/clip-ui-2.png">
-  </div>
-</section>
 
-<!-- FULL VISUAL -->
-<section class="full-image">
-  <img src="images/clip-hero.png">
-  <div class="overlay">
-    <h2>From data → decisions</h2>
-    <p>Transforming workflows with AI-powered UX</p>
-  </div>
-</section>
-
-<!-- SEARCH STORY -->
-<section class="story">
-  <div class="sticky">
-    <div class="story-text">
-      <h2>Search was the biggest drop-off point.</h2>
-      <p>
-        Users struggled with complex inputs and unclear flows.
-      </p>
+    <div class="card">
+      <img src="images/search-ui.png">
+      <div class="card-content">
+        <h3>Search Experience</h3>
+        <p>Improving booking conversion</p>
+      </div>
     </div>
-    <img class="story-img" src="images/search-ui.png">
-  </div>
-</section>
-
-<section class="story">
-  <div class="sticky">
-    <div class="story-text">
-      <h2>Clarity improved conversion.</h2>
-      <p>
-        Simplified inputs, smart defaults, and better hierarchy increased usability.
-      </p>
-    </div>
-    <img class="story-img" src="images/search-ui.png">
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="hero fade">
-  <h1>About Me</h1>
+<section class="section fade">
+  <h2>About</h2>
   <p>
-    UX Designer at Expedia Group with 10+ years experience designing
-    scalable systems across enterprise and consumer platforms.
+    Senior UX Designer with 10+ years of experience designing scalable systems
+    across travel, enterprise, and AI platforms.
   </p>
 </section>
 
@@ -236,18 +217,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 fades.forEach(el => observer.observe(el));
-
-/* STORY ACTIVATION */
-const stories = document.querySelectorAll(".story");
-
-window.addEventListener("scroll", () => {
-  stories.forEach(story => {
-    const rect = story.getBoundingClientRect();
-    if(rect.top < window.innerHeight * 0.5){
-      story.classList.add("active");
-    }
-  });
-});
 </script>
 
 </body>
