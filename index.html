@@ -4,54 +4,165 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhakti Sudha | UX Portfolio</title>
-
 <style>
-body {margin:0;font-family:-apple-system;background:#020617;color:white}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#020617;color:white;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;width:100%;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;z-index:100;background:rgba(2,6,23,0.6);backdrop-filter:blur(12px);box-sizing:border-box}
+.nav a{color:#94a3b8;text-decoration:none;margin-left:24px;font-size:14px;transition:.3s}
+.nav a:hover{color:white}
+
+/* HERO */
 .hero-banner{position:relative;height:100vh;display:flex;align-items:center;padding:0 80px;overflow:hidden}
 #bg-canvas{position:absolute;inset:0;z-index:0}
-.hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(15,23,42,0.5),rgba(2,6,23,0.95));z-index:1}
-.hero-content{position:relative;z-index:2;max-width:700px}
-.hero-title{font-size:64px;line-height:1.1}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(15,23,42,.4),rgba(2,6,23,.96));z-index:1}
+.hero-content{position:relative;z-index:2;max-width:760px}
+.hero-title{font-size:72px;line-height:1.05;margin:0;font-weight:600}
 .hero-title span{background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-subtitle{margin-top:24px;color:#94a3b8}
-.section{max-width:1000px;margin:auto;padding:100px 20px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.card{background:rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;transition:0.4s}
-.card:hover{transform:translateY(-8px)}
-.fade{opacity:0;transform:translateY(40px);transition:1s}
+.hero-subtitle{margin-top:28px;font-size:20px;line-height:1.6;color:#94a3b8;max-width:650px}
+.scroll-indicator{margin-top:50px;color:#64748b;font-size:14px}
+
+/* SECTION */
+.section{max-width:1200px;margin:auto;padding:120px 40px}
+.section-title{font-size:42px;margin-bottom:20px}
+.section p{color:#94a3b8;line-height:1.8}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:50px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.05);border-radius:24px;overflow:hidden;transition:.4s;text-decoration:none;color:white}
+.card:hover{transform:translateY(-10px);border-color:rgba(96,165,250,.3)}
+.card img{width:100%;display:block}
+.card-content{padding:24px}
+.card-content h3{margin:0 0 10px 0}
+.card-content p{margin:0;color:#94a3b8}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(40px);transition:1s ease}
 .fade.visible{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-box{background:rgba(255,255,255,.04);padding:32px;border-radius:24px}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav{padding:20px}
+.hero-banner{padding:0 24px}
+.hero-title{font-size:42px}
+.hero-subtitle{font-size:16px}
+.grid,.about-grid{grid-template-columns:1fr}
+.section{padding:100px 24px}
+}
 </style>
 </head>
-
 <body>
 
+<!-- NAV -->
+<nav class="nav">
+<div>Bhakti Sudha</div>
+<div>
+<a href="#work">Work</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
 <section class="hero-banner">
 <canvas id="bg-canvas"></canvas>
 <div class="hero-overlay"></div>
+
 <div class="hero-content">
 <h1 class="hero-title">Designing scalable,<br><span>data-driven & AI-powered</span><br>user experiences.</h1>
 <p class="hero-subtitle">Across healthcare, B2B, travel, and ecommerce—designing intelligent, scalable products from vision to real-world impact.</p>
+<div class="scroll-indicator">↓ Scroll to explore</div>
 </div>
 </section>
 
-<section class="section fade">
-<h2>Selected Work</h2>
+<!-- WORK -->
+<section id="work" class="section fade">
+<h2 class="section-title">Selected Work</h2>
 <div class="grid">
-<div class="card"><img src="images/clip-ui-1.png"></div>
-<div class="card"><img src="images/search-ui.png"></div>
+
+<a class="card" href="cases/clip.html">
+<img src="images/clip-ui-1.png">
+<div class="card-content">
+<h3>Clinical Intelligence Platform</h3>
+<p>AI-driven enterprise UX system simplifying complex clinical workflows.</p>
 </div>
+</a>
+
+<a class="card" href="cases/expedia.html">
+<img src="images/search-ui.png">
+<div class="card-content">
+<h3>Search Experience</h3>
+<p>Improving booking conversion through scalable UX systems.</p>
+</div>
+</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section fade">
+<h2 class="section-title">About Me</h2>
+<div class="about-grid">
+<div>
+<p>
+Senior UX Designer with 10+ years of experience designing scalable systems across healthcare, enterprise, AI, and travel ecosystems.
+</p>
+<p>
+Currently designing experiences at Expedia Group focused on high-impact search and booking journeys.
+</p>
+</div>
+
+<div class="about-box">
+<h3>Expertise</h3>
+<p>UX Strategy</p>
+<p>Enterprise UX</p>
+<p>AI Product Design</p>
+<p>Design Systems</p>
+<p>Interaction Design</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section fade">
+<h2 class="section-title">Contact</h2>
+<p>Open to collaborations, leadership roles, and impactful product design opportunities.</p>
 </section>
 
 <script>
+// FADE ANIMATION
+const fades=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible');}
+});
+});
+fades.forEach(el=>observer.observe(el));
+
+// PARTICLE BACKGROUND
 const canvas=document.getElementById('bg-canvas');
 const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
 let mouse={x:null,y:null,radius:120};
-window.addEventListener('mousemove',e=>{mouse.x=e.x;mouse.y=e.y});
+window.addEventListener('mousemove',e=>{mouse.x=e.x;mouse.y=e.y;});
 
 let particles=[];
-for(let i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,size:Math.random()*2});}
+for(let i=0;i<90;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*0.4,
+vy:(Math.random()-0.5)*0.4,
+size:Math.random()*2
+});
+}
 
 function draw(){
 ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -60,21 +171,38 @@ particles.forEach(p=>{
 p.x+=p.vx;
 p.y+=p.vy;
 
-// mouse interaction
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
 let dx=mouse.x-p.x;
 let dy=mouse.y-p.y;
 let dist=Math.sqrt(dx*dx+dy*dy);
 
 if(dist<mouse.radius){
-p.x-=dx*0.01;
-p.y-=dy*0.01;
+p.x-=dx*0.008;
+p.y-=dy*0.008;
 }
 
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle='rgba(96,165,250,0.7)';
+ctx.fillStyle='rgba(96,165,250,0.6)';
 ctx.fill();
 });
+
+for(let i=0;i<particles.length;i++){
+for(let j=i+1;j<particles.length;j++){
+let dx=particles[i].x-particles[j].x;
+let dy=particles[i].y-particles[j].y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+if(dist<120){
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+ctx.strokeStyle='rgba(168,139,250,0.08)';
+ctx.stroke();
+}
+}
+}
 
 requestAnimationFrame(draw);
 }
